@@ -1,0 +1,70 @@
+{
+    "extends": [
+        "stylelint-config-standard"
+    ],
+    "customSyntax": "postcss-scss",
+    "rules": {
+        "color-function-notation": "legacy",
+        "indentation": 2,
+        "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+        "declaration-block-no-redundant-longhand-properties": null,
+        "alpha-value-notation": "number",
+        "keyframes-name-pattern": "^[a-z][a-zA-Z0-9]+$",
+        "no-descending-specificity": null,
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "extend",
+                    "use",
+                    "import",
+                    "include",
+                    "mixin",
+                    "for"
+                ]
+            }
+        ],
+        "unit-disallowed-list": [
+            [
+                "px",
+                "vh",
+                "vw"
+            ],
+            {
+                "ignoreProperties": {
+                    "px": [
+                        "/filter/"
+                    ]
+                },
+                "ignoreMediaFeatureNames": {
+                    "px": [
+                        "/width/", "/height/"
+                    ]
+                }
+            }
+        ],
+        "no-invalid-position-at-import-rule": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "use"
+                ]
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.module.scss"
+            ],
+            "customSyntax": "postcss-scss",
+            "extends": [
+                "stylelint-config-css-modules"
+            ],
+            "rules": {
+                "scss/dollar-variable-pattern": "",
+                "scss/at-extend-no-missing-placeholder": null
+            }
+        }
+    ]
+}
