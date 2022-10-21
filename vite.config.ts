@@ -1,7 +1,10 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-import { peerDependencies } from "./package.json";
+import * as packageJson from "./package.json";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const peerDependencies = (packageJson as any)?.peerDependencies || {};
 
 const config = {
     appName: "myapp",
@@ -32,6 +35,7 @@ export default defineConfig(({ command, mode }) => {
             host: true
         },
         clearScreen: false,
+        publicDir:   "src/static",
         build:       {
             cssCodeSplit:  false,
             cssTarget:     "chrome61",

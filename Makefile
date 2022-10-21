@@ -18,10 +18,7 @@ YEAR:=$(shell date "+%Y")
 #
 WORKING_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-all: install build test
-
-build:
-	npm i
+build: install
 	npm run build
 
 dist: build
