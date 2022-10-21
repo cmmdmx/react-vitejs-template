@@ -37,13 +37,15 @@ export default defineConfig(({ command, mode }) => {
         clearScreen: false,
         publicDir:   "src/static",
         build:       {
-            cssCodeSplit:  false,
-            cssTarget:     "chrome61",
-            emptyOutDir:   true,
-            sourcemap:     "hidden",
-            minify:        true,
-            outDir:        path.resolve(__dirname, "dist"),
-            rollupOptions: {
+            cssCodeSplit:      false,
+            cssTarget:         "chrome61",
+            emptyOutDir:       true,
+            sourcemap:         "hidden",
+            minify:            true,
+            outDir:            path.resolve(__dirname, "dist"),
+            target:            "es2020",
+            assetsInlineLimit: 2048,
+            rollupOptions:     {
                 external: [...Object.keys(peerDependencies)],
                 output:   {
                     exports:               "named",
