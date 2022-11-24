@@ -8,7 +8,8 @@ const peerDependencies = (packageJson as any)?.peerDependencies || {};
 
 const config = {
     appName: "myapp",
-    port:    8081
+    port:    8081,
+    distDir: "dist"
 };
 
 // https://vitejs.dev/config/
@@ -21,9 +22,12 @@ export default defineConfig(({ command, mode }) => {
         plugins: [
             react()
         ],
+        esbuild: {
+            legalComments: "eof"
+        },
         css: {
             modules: {
-                generateScopedName: `_${config.appName}p_[local]_[hash:base64:5]`
+                generateScopedName: `_${config.appName}_[hash:base64:5]`
             }
         },
         server: {
@@ -35,17 +39,19 @@ export default defineConfig(({ command, mode }) => {
             host: true
         },
         clearScreen: false,
+        root:        "src/",
         publicDir:   "src/static",
         build:       {
-            cssCodeSplit:      false,
-            cssTarget:         "chrome61",
-            emptyOutDir:       true,
-            sourcemap:         "hidden",
-            minify:            true,
-            outDir:            path.resolve(__dirname, "dist"),
-            target:            "es2020",
-            assetsInlineLimit: 2048,
-            rollupOptions:     {
+            cssCodeSplit:            false,
+            cssTarget:               "chrome61",
+            emptyOutDir:             true,
+            sourcemap:               "hidden",
+            minify:                  true,
+            outDir:                  path.resolve(__dirname, config.distDir),
+            target:                  "es2020",
+            preserveEntrySignatures: "strict",
+            assetsInlineLimit:       2048,
+            rollupOptions:           {
                 external: [...Object.keys(peerDependencies)],
                 output:   {
                     exports:               "named",

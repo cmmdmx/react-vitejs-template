@@ -2,7 +2,7 @@ module.exports = {
     root: true,
     env:  {
         browser: true,
-        es2021:  true,
+        es2022:  true,
         node:    true
     },
     extends: [
@@ -28,7 +28,7 @@ module.exports = {
             version: "detect"
         }
     },
-    ignorePatterns: ["*.css", "*.svg", "*.scss", ".json"],
+    ignorePatterns: ["*.css", "*.svg", "*.scss", "dist/**", "build/**"],
     rules:          {
         "strict": [
             2
