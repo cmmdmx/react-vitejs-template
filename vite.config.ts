@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import * as packageJson from "./package.json";
+import autoprefixer from "autoprefixer";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const peerDependencies = (packageJson as any)?.peerDependencies || {};
@@ -28,6 +29,11 @@ export default defineConfig(({ command, mode }) => {
         css: {
             modules: {
                 generateScopedName: `_${config.appName}_[hash:base64:5]`
+            },
+            postcss: {
+                plugins: [
+                    autoprefixer({})
+                ]
             }
         },
         server: {
@@ -40,7 +46,7 @@ export default defineConfig(({ command, mode }) => {
         },
         clearScreen: false,
         root:        "src/",
-        publicDir:   "src/static",
+        publicDir:   "static",
         build:       {
             cssCodeSplit:            false,
             cssTarget:               "chrome61",
