@@ -26,7 +26,7 @@
     "node": ">=16.x"
   },
   "dependencies": {
-    "palstek": "^0.9.1",
+    "palstek": "^0.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
