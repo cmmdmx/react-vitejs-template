@@ -26,30 +26,30 @@
     "node": ">=16.x"
   },
   "dependencies": {
-    "palstek": "^0.10.1",
+    "palstek": "^0.10.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.14.2",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
+    "@types/node": "^20.4.2",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
     "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.54.0",
-    "@vitejs/plugin-react": "^3.1.0",
-    "autoprefixer": "^10.4.13",
-    "eslint": "^8.35.0",
-    "eslint-plugin-react": "^7.32.2",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.33.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss-scss": "^4.0.6",
-    "react-router-dom": "^6.8.2",
-    "sass": "^1.58.3",
-    "stylelint": "^15.2.0",
-    "stylelint-config-css-modules": "^4.2.0",
-    "stylelint-config-standard-scss": "^7.0.1",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.4"
+    "react-router-dom": "^6.14.2",
+    "sass": "^1.64.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-css-modules": "^4.3.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.6"
   },
   "browserslist": {
     "production": [
